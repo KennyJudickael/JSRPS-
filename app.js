@@ -13,6 +13,7 @@ possibleChoises.forEach((possibleChoises) =>
     userChoiceDisplay.innerHTML = userChoice;
 
     generateComputerChoice();
+    getResult();
   })
 );
 
@@ -31,4 +32,30 @@ function generateComputerChoice() {
   }
 
   computerChoiceDisplay.innerHTML = computerChoice;
+}
+
+function getResult() {
+  if (computerChoice === userChoice) {
+    result = "Egalité";
+  }
+  if (computerChoice === "Pierre" && userChoice === "Papier") {
+    result = "Gagné";
+  }
+  if (computerChoice === "Pierre" && userChoice === "Ciseaux") {
+    result = "Perdu";
+  }
+  if (computerChoice === "Papier" && userChoice === "Ciseaux") {
+    result = "Gagné";
+  }
+  if (computerChoice === "Papier" && userChoice === "Pierre") {
+    result = "Perdu";
+  }
+  if (computerChoice === "Ciseaux" && userChoice === "Pierre") {
+    result = "Gagné";
+  }
+  if (computerChoice === "Ciseaux" && userChoice === "Papier") {
+    result = "Perdu";
+  }
+
+  resultDisplay.innerHTML = result;
 }
